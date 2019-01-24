@@ -117,10 +117,12 @@ class ApiController extends FOSRestController
      *
      * @SWG\Tag(name="User")
      */
-    public function registerAction(Request $request, UserPasswordEncoderInterface $encoder) {
+    public function registerAction(Request $request, UserPasswordEncoderInterface $encoder) 
+    {
+        
         $serializer = $this->get('jms_serializer');
-        // $em = $this->getDoctrine()->getManager();
-        $dm = $this->get('doctrine_mongodb')->getManager();
+        $em = $this->getDoctrine()->getManager();
+        // $dm = $this->get('doctrine_mongodb')->getManager();
 
         $user = [];
         $message = "";
@@ -134,9 +136,8 @@ class ApiController extends FOSRestController
             $username = $request->request->get('_username');
             $password = $request->request->get('_password');
 
-            $db_driver = $request->request->get('_dbdriver');
-
-            /*
+            // $db_driver = $request->request->get('_dbdriver');
+            
             $user = new User();
             $user->setName($name);
             $user->setEmail($email);
@@ -146,8 +147,9 @@ class ApiController extends FOSRestController
 
             $em->persist($user);
             $em->flush();
-            */
+            
 
+            /*
             $user = new MongoUser();
             $user->setName($name);
             $user->setEmail($email);
@@ -156,7 +158,7 @@ class ApiController extends FOSRestController
 
             $dm->persist($user);
             $dm->flush();
-
+            */
 
         } catch (Exception $ex) {
             $code = 500;
