@@ -1,15 +1,4 @@
 <?php
-/**
- * ApiController.php
- *
- * API Controller
- *
- * @category   Controller
- * @package    MyKanban
- * @author     Francisco Ugalde
- * @copyright  2018 www.franciscougalde.com
- * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
- */
 
 namespace App\Controller;
 
